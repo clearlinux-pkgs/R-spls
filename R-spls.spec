@@ -4,7 +4,7 @@
 #
 Name     : R-spls
 Version  : 2.2.2
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/spls_2.2-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/spls_2.2-2.tar.gz
 Summary  : Sparse Partial Least Squares (SPLS) Regression and
