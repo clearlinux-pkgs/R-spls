@@ -4,7 +4,7 @@
 #
 Name     : R-spls
 Version  : 2.2.2
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/spls_2.2-2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/spls_2.2-2.tar.gz
 Summary  : Sparse Partial Least Squares (SPLS) Regression and
@@ -12,7 +12,7 @@ Group    : Development/Tools
 License  : GPL-2.0+
 Requires: R-pls
 BuildRequires : R-pls
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 partial least squares (SPLS) regression and classification
@@ -25,11 +25,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1522161965
+export SOURCE_DATE_EPOCH=1552848188
 
 %install
+export SOURCE_DATE_EPOCH=1552848188
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1522161965
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -64,8 +64,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library spls|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  spls || :
 
 
 %files
@@ -100,3 +99,5 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/spls/help/spls.rdx
 /usr/lib64/R/library/spls/html/00Index.html
 /usr/lib64/R/library/spls/html/R.css
+/usr/lib64/R/library/spls/tests/tspls.R
+/usr/lib64/R/library/spls/tests/tspls.Rout.save
